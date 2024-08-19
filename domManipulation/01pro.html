@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        /* html, body{
+            height: 100%;
+            width: 100%;
+        } */
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: lightblue;
+            /* color: turquoise; */
+
+        }
+        .card{
+            height: 400px;
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+
+        }
+        .card img{
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .card h1{
+            font-size: 30px;
+            font-weight: 400;
+            margin: 15px 0;
+        }
+        .card h5{
+            color: red;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+        .btn-container button{
+            background-color: cadetblue;
+            color: white;
+            font-weight: 700;
+            padding: 12px 10px;
+            border: none;
+            margin: 10px 0;
+            padding: 10px 10px;
+            cursor: pointer;
+        }
+        /* .btn-container #remove{
+            background-color: #dadada;
+            color: #111;
+        } */
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1502323777036-f29e3972d82f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            <h1>Mia</h1>
+            <h5>Stranger</h5>
+            <div class="btn-container">
+                <!-- <button id="remove">Remove</button> -->
+                <button id="add">Add Friend</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var istatus = document.querySelector("h5");
+        var addFriend = document.querySelector("#add");
+        // var removeFriend = document.querySelector("#remove");
+        var check = 0;
+        addFriend.addEventListener("click",function(){
+            if(check==0){
+                istatus.innerHTML = "Friends";
+                istatus.style.color = "green";
+                addFriend.innerHTML = "Remove";
+                
+                check=1;
+            }else{
+                istatus.innerHTML = "Stranger";
+                istatus.style.color = "red";
+                addFriend.innerHTML = "Add Friend"
+                check=0;
+            }
+        })
+        // removeFriend.addEventListener("click",function(){
+        //     istatus.innerHTML = "Stranger";
+        //     istatus.style.color = "red";
+        // })
+    </script>
+</body>
+</html>
